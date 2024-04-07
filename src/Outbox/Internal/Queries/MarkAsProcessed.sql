@@ -1,0 +1,1 @@
+UPDATE Outbox SET IsProcessed = 1 WHERE Id IN @Ids

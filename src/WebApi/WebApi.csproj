@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c8fe9d21-504a-4ad2-9ba3-c817fd242424</UserSecretsId>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Outbox\Outbox.csproj" />
+	  <ProjectReference Include="..\UnitOfWork\UnitOfWork.csproj" />
+	</ItemGroup>
+
+</Project>
