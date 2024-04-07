@@ -43,7 +43,7 @@ namespace Outbox.Internal
             await connection.ExecuteAsync(commandDefinition);
         }
 
-        public async Task<ImmutableArray<OutboxRecord>> ReserveTopByMessageTypesAsync(int top, TimeSpan reservationTimeout,
+        public async Task<ImmutableArray<OutboxRecord>> ReserveAsync(int top, TimeSpan reservationTimeout,
             CancellationToken cancellationToken)
         {
             var query = SqlQueriesReader.ReadWithCache(ReservedForProcessingQueryName);

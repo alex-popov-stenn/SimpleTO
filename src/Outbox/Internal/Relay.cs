@@ -25,7 +25,7 @@ internal sealed class Relay : IRelay
 
         try
         {
-            var records = await _outbox.ReserveTopByMessageTypesAsync(BatchSize, ReservationTimeout, cancellationToken);
+            var records = await _outbox.ReserveAsync(BatchSize, ReservationTimeout, cancellationToken);
 
             var builder = ImmutableArray.CreateBuilder<MessageEnvelope>();
 

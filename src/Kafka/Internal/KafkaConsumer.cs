@@ -26,7 +26,7 @@ public sealed class KafkaConsumer(
             SaslMechanism = SaslMechanism.Plain,
             SaslUsername = configuration["SaslUsername"],
             SaslPassword = configuration["SaslPassword"],
-            GroupId = Guid.NewGuid().ToString(),
+            GroupId = "testGroup",
             AutoOffsetReset = AutoOffsetReset.Latest,
             EnableAutoCommit = false
         };
