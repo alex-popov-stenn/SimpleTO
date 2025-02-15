@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Data;
 using Kafka;
 using UnitOfWork;
 
@@ -21,7 +22,7 @@ internal sealed class Relay : IRelay
 
     public async Task PublishAsync(CancellationToken cancellationToken)
     {
-        await using var transaction = await _unitOfWork.BeginSnapshotTransactionAsync(cancellationToken);
+        await using var transaction = await _unitOfWork.BeginTransactionAsync(IsolationLevel.ReadCommitted, cancellationToken);
 
         try
         {

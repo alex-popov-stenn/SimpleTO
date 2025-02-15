@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
+﻿using System.Data;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace UnitOfWork;
 
@@ -12,4 +13,5 @@ public interface IUnitOfWork
     Task CommitAsync(CancellationToken cancellationToken);
     Task<IDbContextTransaction> BeginSnapshotTransactionAsync(CancellationToken cancellationToken);
     Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken);
+    Task<IDbContextTransaction> BeginTransactionAsync(IsolationLevel isolationLevel, CancellationToken cancellationToken);
 }

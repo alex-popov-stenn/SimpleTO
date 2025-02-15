@@ -36,5 +36,10 @@ namespace UnitOfWork.Internal
         {
             return await db.Database.BeginTransactionAsync(cancellationToken);
         }
+
+        public async Task<IDbContextTransaction> BeginTransactionAsync(IsolationLevel isolationLevel, CancellationToken cancellationToken)
+        {
+            return await db.Database.BeginTransactionAsync(isolationLevel, cancellationToken);
+        }
     }
 }
